@@ -5,6 +5,8 @@ from imp import ClickImport
 from exp import *
 from delModule import *
 
+#  Стартовое окно с главными кнопками
+
 
 def start():
     global window

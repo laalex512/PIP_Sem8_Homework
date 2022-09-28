@@ -5,6 +5,8 @@ import tkinter as tk
 import csv
 
 
+# когда из главного окна нажимаем кнопку Удалить вызывается эта функция
+# создает новое окно с полями ввода (что мы хотим удалить) и своей кнопкой "удалить"
 def ClickDelete():
     global inputFields, labels, window
     window = tk.Tk()
@@ -20,19 +22,23 @@ def ClickDelete():
                          text="Удалить", command=lambda: ClickButtonDelete())
     butInput.grid(row=4, column=1)
 
+#  Эта функция проверяет, чтобы при нажатии "удалить" все поля были заполнены
+# и формирует словарь для удаления
+
 
 def ClickButtonDelete():
-    data = []
     dict = {}
     for i in range(len(keys)):
         dict[keys[i]] = inputFields[i].get()
     if "" not in dict.values():
-        data.append(dict)
         DeleteFromCsv(dict)
     else:
         label = tk.Label(window, foreground="red",
                          text="Не все поля введены!!!", font="times 15")
         label.grid(row=5, column=1)
+
+# Ну, и удаление. Загружаем список словарей из файла, проверяем на наличие в списке
+# словаря для удаления, отфильтровываем его, перезаписываем файл, заносим в лог
 
 
 def DeleteFromCsv(dictForDelete, path="data.csv"):

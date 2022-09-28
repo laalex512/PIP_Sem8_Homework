@@ -4,6 +4,9 @@ import tkinter as tk
 from keys import keys
 from log import *
 
+# когда из главного окна нажимаем кнопку Фильтровать вызывается эта функция
+# создает новое окно с полями ввода (что мы хотим фильтровать) и своей кнопкой "Получить"
+
 
 def ClickOutput():
     global inputFields, labels, window
@@ -21,6 +24,8 @@ def ClickOutput():
     butOutput.grid(row=4, column=1)
 
 
+# Проверяем, чтобы хотя бы в одном поле было что-нибудь введено.
+# Если введено, вызываем функцию записи в файл output.csv, заносим в лог
 def ClickButtonOutput():
     dict = {}
     alreadyInput = False
@@ -37,6 +42,9 @@ def ClickButtonOutput():
         label = tk.Label(window, foreground="red",
                          text="Ни одно поле не введено!!!", font="times 15")
         label.grid(row=5, column=1)
+
+# сравнивает полученное значение полученного ключа с имеющимися в базе,
+# результат записывает в файл
 
 
 def OutputDataInCsv(key, value, path="data.csv", outPath="output.csv"):
