@@ -1,0 +1,6 @@
+2022-09-28 23:54:38.253626:
+input employee: [{'Last Name': '11', 'Name': '11', 'Phone': '11', 'Post': '11', 'Salary': '11'}]
+2022-09-28 23:55:10.174626:
+delete employee: {'Last Name': '11', 'Name': '11', 'Phone': '11', 'Post': '11', 'Salary': '11'}
+2022-09-28 23:56:54.252626:
+find people: key: Name, value: Иван
